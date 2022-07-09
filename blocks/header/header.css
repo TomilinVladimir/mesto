@@ -1,0 +1,13 @@
+.header {
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(54, 54, 54, 0.7);
+  max-height: 119px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+@media (max-width: 934px) {
+  .header{
+    max-width: 100%;
+  }
+}

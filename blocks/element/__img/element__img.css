@@ -1,0 +1,17 @@
+.element__img {
+  max-width: 282px;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* @media (max-width: 1023px) {
+  .elment__img{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .elment__img{
+    max-width: 100%;
+  }
+} */
