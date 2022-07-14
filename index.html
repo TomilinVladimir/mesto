@@ -18,7 +18,7 @@
       <div class="profile__info">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
         <p class="profile__job">Исследователь океана</p>
-        <button type="button" class="button profile__edit-button"></button>
+        <button type="button" aria-label="Редактировать профиль" class="button profile__edit-button"></button>
       </div>
       <button type="button" class="button profile__add-button"></button>
     </section>
@@ -28,35 +28,35 @@
           <img class="element__img" src="blocks/element/images/kirill1.jpg" alt="картинка">
           <div class="element__description">
             <h2 class="element__tittle">Карачаевск</h2>
-            <button type="button" class="like-button button element__like-button"></button>
+            <button type="button" aria-label="Нравится" class="like-button button element__like-button"></button>
           </div>
         </li>
         <li class="element">
           <img class="element__img" src="blocks/element/images/kirill1.jpg" alt="картинка">
           <div class="element__description">
             <h2 class="element__tittle">Карачаевск</h2>
-            <button type="button" class="like-button button element__like-button"></button>
+            <button type="button" aria-label="Нравится" class="like-button button element__like-button"></button>
           </div>
         </li>
         <li class="element">
           <img class="element__img" src="blocks/element/images/kirill1.jpg" alt="картинка">
           <div class="element__description">
             <h2 class="element__tittle">Карачаевск</h2>
-            <button type="button" class="like-button button element__like-button"></button>
+            <button type="button" aria-label="Нравится" class="like-button button element__like-button"></button>
           </div>
         </li>
         <li class="element">
           <img class="element__img" src="blocks/element/images/kirill1.jpg" alt="картинка">
           <div class="element__description">
             <h2 class="element__tittle">Карачаевск</h2>
-            <button type="button" class="like-button button element__like-button"></button>
+            <button type="button" aria-label="Нравится" class="like-button button element__like-button"></button>
           </div>
         </li>
         <li class="element">
           <img class="element__img" src="blocks/element/images/kirill1.jpg" alt="картинка">
           <div class="element__description">
             <h2 class="element__tittle">Карачаевск</h2>
-            <button type="button" class="like-button button element__like-button"></button>
+            <button type="button" aria-label="Нравится" class="like-button button element__like-button"></button>
           </div>
         </li>
         <li class="element">
@@ -70,27 +70,28 @@
     </section>
   </main>
   <footer class="footer">
-    <h3 class="footer__title">&#169; 2022 Mesto Russia</h3>
+    <p class="footer__title">&#169; 2022 Mesto Russia</p>
   </footer>
 
   <div class="popup">
+    <div class="popup__overlay"></div>
     <div class="popup__container">
       <div class="popup__form">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__input-container" name="profile">
           <input type="text" name="name" required value placeholder="Имя" minlength="2" maxlength="40"
-            class="popup__name-input">
+            class="popup__input popup__input_name">
           <!-- <span class="name-input-error popup__input-error"></span> -->
           <input type="text" name="job" required value placeholder="Профессия" minlength="2" maxlength="200"
-            class="popup__job-input">
+            class="popup__input popup__input_job">
           <!-- <span class="job-input-error popup__input-error"></span> -->
-          <button class="button popup__input-save" type="submit">Сохранить</button>
+          <button class="button popup__input-save" aria-label="Закрыть" type="submit">Сохранить</button>
         </form>
       </div>
       <button class="button popup__close" type="button"></button>
     </div>
   </div>
-  <script src="scrypt/scrypt.js"></script>
+  <script src="script/script.js"></script>
 </body>
 
 </html>

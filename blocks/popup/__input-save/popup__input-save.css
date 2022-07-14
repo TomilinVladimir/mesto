@@ -13,3 +13,13 @@
   border: 0;
   border-radius: 2px;
 }
+
+@media (max-width: 934px) {
+  .popup__input-save {
+    height: 46px;
+    max-width: 238px;
+    margin: 45px 0 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

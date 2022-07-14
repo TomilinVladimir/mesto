@@ -13,8 +13,16 @@
 
 @media (max-width: 934px) {
   .profile__info{
-    padding-left: 0;
+    grid-template-columns: 1fr 18px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+                        "name edit-button"
+                        "job";
+    padding-left: 14px;
+    padding-left: 14px;
     padding-top: 26px;
-    padding-bottom: 36px;
+    padding-bottom: 34px;
+    column-gap: 10px;
+    row-gap: 6px;
   }
 }

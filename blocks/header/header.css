@@ -1,7 +1,7 @@
 .header {
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(54, 54, 54, 0.7);
-  max-height: 119px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  /* max-height: 119px; */
   max-width: 880px;
   margin: 0 auto;
 }
