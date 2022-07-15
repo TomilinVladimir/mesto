@@ -4,8 +4,8 @@ let formElement = document.querySelector('.popup__input-container');
 let closeFormBtn = document.querySelector('.popup__close');
 
 
-let nameInput = formElement.querySelector('.popup__input_name');
-let jobInput = formElement.querySelector('.popup__input_job');
+let nameInput = formElement.querySelector('.popup__input_val_name');
+let jobInput = formElement.querySelector('.popup__input_val_job');
 
 let oldName = document.querySelector('.profile__name');
 let oldJob = document.querySelector('.profile__job');
@@ -14,8 +14,8 @@ let popupOwerlay = document.querySelector('.popup__overlay');
 
 function openEditForm(){
   popup.classList.toggle('popup_visible');
-  // oldJob.textContent = jobInput.value;
-  // oldName.textContent = nameInput.value;
+  nameInput.value = oldName.textContent;
+  jobInput.value = oldJob.textContent;
 }
 
 function closeEditForm(){

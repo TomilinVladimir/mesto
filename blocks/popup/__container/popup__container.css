@@ -6,15 +6,13 @@
   max-width: 430px;
   padding: 34px 36px 37px;
   position: relative;
-  top: -35px;
   width: 100%;
 }
 
 @media (max-width: 934px) {
   .popup__container{
     max-width: 282px;
-    height: 322px;
+    /* height: 322px; */
     padding: 25px 22px;
-    top: -25px;
   }
 }

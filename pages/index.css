@@ -17,7 +17,6 @@
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__description/element__description.css);
 @import url(../blocks/element/__img/element__img.css);
-@import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/element/__tittle/element__tittle.css);
 @import url(../blocks/like-button/like-button.css);
 @import url(../blocks/footer/footer.css);
@@ -27,14 +26,14 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input-container/popup__input-container.css);
-@import url(../blocks/popup/__input-save/popup__input-save.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/button/button.css);
-@import url(../blocks/popup/__visible/popup__visible.css);
 @import url(../blocks/popup/__overlay/popup__overlay.css);
 @import url(../blocks/popup/_visible/popup_visible.css);
-@import url();
-@import url();
-@import url();
+@import url(../blocks/popup/__input-save/popup__input-save.css);
+@import url(../blocks/element/__like-button/element__like-button.css);
+@import url(../blocks/button/_opas/button_opas_l.css);
+@import url(../blocks/button/_opas/button_opas_m.css);
+@import url(../blocks/button/_opas/button_opas_s.css);
 
