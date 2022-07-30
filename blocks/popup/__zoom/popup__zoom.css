@@ -1,0 +1,10 @@
+.popup__zoom {
+  max-height: 75vh;
+  max-width: 75vw;
+  background-color: transparent;
+  /* box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}

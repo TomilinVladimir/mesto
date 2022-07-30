@@ -1,0 +1,10 @@
+.popup__img-text {
+  padding-top: 10px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFF;
+  text-align: left;
+  margin: 0;
+}

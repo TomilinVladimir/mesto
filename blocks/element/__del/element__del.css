@@ -1,0 +1,14 @@
+.element__del {
+  background-color: transparent;
+  width: 18px;
+  height: 19px;
+  background-image: url(../images/del.svg);
+  border: none;
+  outline: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
