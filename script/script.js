@@ -55,7 +55,7 @@ let addCardBtn = document.querySelector(cardSelectors.addCard);
 let popupCard = document.querySelector('.popup__card');
 let cardForm = document.querySelector(cardSelectors.form);
 let closeCardBtn = document.querySelector('.popup__close_form-card');
-let cardsList =  document.querySelector(cardSelectors.list);
+let cardsList = document.querySelector(cardSelectors.list);
 
 const template = document.querySelector(cardSelectors.template).content.querySelector('.element');
 
@@ -68,42 +68,42 @@ const popupCardOwerlay = popupCard.querySelector('.popup__overlay');
 
 const popupZoomOwerlay = popupZoom.querySelector('.popup__overlay');
 
-function openProfilForm(){
+function openProfilForm() {
   popupProfil.classList.add('popup_visible');
   nameInput.value = oldName.textContent;
   jobInput.value = oldJob.textContent;
 }
 
-function closeProfilForm(){
+function closeProfilForm() {
   popupProfil.classList.remove('popup_visible');
 }
 
-function openCardForm(){
+function openCardForm() {
   popupCard.classList.add('popup_visible');
 }
 
-function closeCardForm(){
+function closeCardForm() {
   popupCard.classList.remove('popup_visible');
 }
 
-function closeZoomForm(){
+function closeZoomForm() {
   popupZoom.classList.remove('popup_visible');
 }
 
 
-function profilSubmitHandler (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                                // Так мы можем определить свою логику отправки.
-                                                // О том, как это делать, расскажем позже.
-      oldJob.textContent = jobInput.value;
-      oldName.textContent = nameInput.value;
-    // Получите значение полей jobInput и nameInput из свойства value
-    // Выберите элементы, куда должны быть вставлены значения полей
-    // Вставьте новые значения с помощью textContent
-    closeProfilForm();
+function profilSubmitHandler(evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  // Так мы можем определить свою логику отправки.
+  // О том, как это делать, расскажем позже.
+  oldJob.textContent = jobInput.value;
+  oldName.textContent = nameInput.value;
+  // Получите значение полей jobInput и nameInput из свойства value
+  // Выберите элементы, куда должны быть вставлены значения полей
+  // Вставьте новые значения с помощью textContent
+  closeProfilForm();
 }
 
-function addCardFunc (name, src) {
+function addCardFunc(name, src) {
   const newElement = template.cloneNode(true);
   const cardName = newElement.querySelector(cardSelectors.text);
   const cardImg = newElement.querySelector(cardSelectors.img);
@@ -121,27 +121,27 @@ function addCardFunc (name, src) {
     console.log('like');
   });
 
-  imgBtn.addEventListener('click', function(){
+  imgBtn.addEventListener('click', function () {
     popupZoom.classList.add('popup_visible');
     const urlImg = document.querySelector('.popup__img');
     const imgText = document.querySelector('.popup__img-text');
     closeZoomBtn.addEventListener('click', closeZoomForm);
-    urlImg.setAttribute('src',cardImg.src);
+    urlImg.setAttribute('src', cardImg.src);
     urlImg.setAttribute('alt', name);
     imgText.textContent = name;
 
     // console.dir(urlImg);
   })
 
-  delBtn.addEventListener('click', function(){
+  delBtn.addEventListener('click', function () {
     newElement.remove();
   })
 }
 
-function cardSubmitListner () {
+function cardSubmitListner() {
   const newCardName = cardForm.querySelector(cardSelectors.inputName);
   const newCardSrc = cardForm.querySelector(cardSelectors.inputSrc);
-  cardForm.addEventListener('submit', function(evt){
+  cardForm.addEventListener('submit', function (evt) {
     evt.preventDefault();
     addCardFunc(newCardName.value, newCardSrc.value);
     closeCardForm();
@@ -150,8 +150,8 @@ function cardSubmitListner () {
   });
 }
 
-function createInitialCards (){
-  initialCards.forEach(function (item){
+function createInitialCards() {
+  initialCards.forEach(function (item) {
     const cardName = item.name;
     const cardSrc = item.link;
     addCardFunc(cardName, cardSrc);
