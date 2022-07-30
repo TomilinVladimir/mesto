@@ -60,7 +60,7 @@ let cardsList = document.querySelector(cardSelectors.list);
 const template = document.querySelector(cardSelectors.template).content.querySelector('.element');
 
 const popupZoom = document.querySelector('.popup_image');
-const closeZoomBtn = popupZoom.querySelector('.popup__close_form_zoom');
+const closeZoomBtn = popupZoom.querySelector('.popup__close_form-zoom');
 
 const popupProfilOwerlay = popupProfil.querySelector('.popup__overlay');
 
