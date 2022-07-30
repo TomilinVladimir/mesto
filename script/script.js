@@ -41,7 +41,7 @@ const cardSelectors = {
 
 
 let editProfilBtn = document.querySelector('.profile__edit-button');
-let popupProfil = document.querySelector('.popup__profil');
+let popupProfil = document.querySelector('.popup_profil');
 let profilForm = document.querySelector('.popup__input-profil');
 let closeProfilBtn = document.querySelector('.popup__close_form-profil');
 
@@ -52,14 +52,14 @@ let oldName = document.querySelector('.profile__name');
 let oldJob = document.querySelector('.profile__job');
 
 let addCardBtn = document.querySelector(cardSelectors.addCard);
-let popupCard = document.querySelector('.popup__card');
+let popupCard = document.querySelector('.popup_card');
 let cardForm = document.querySelector(cardSelectors.form);
 let closeCardBtn = document.querySelector('.popup__close_form-card');
 let cardsList = document.querySelector(cardSelectors.list);
 
 const template = document.querySelector(cardSelectors.template).content.querySelector('.element');
 
-const popupZoom = document.querySelector('.popup__image');
+const popupZoom = document.querySelector('.popup_image');
 const closeZoomBtn = popupZoom.querySelector('.popup__close_form_zoom');
 
 const popupProfilOwerlay = popupProfil.querySelector('.popup__overlay');
