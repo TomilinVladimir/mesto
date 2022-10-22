@@ -69,13 +69,30 @@ const newCardName = cardForm.querySelector(cardSelectors.inputName);
 const newCardSrc = cardForm.querySelector(cardSelectors.inputSrc);
 
 // const popupProfilOwerlay = popupProfil.querySelector('.popup__overlay');
-
 // const popupCardOwerlay = popupCard.querySelector('.popup__overlay');
-
 // const popupZoomOwerlay = popupZoom.querySelector('.popup__overlay');
+
+
+
+// ESC закрытие
+const ESC_KEYCODE = 27;
+
+function closePopup(form) {
+  document.removeEventListener('keydown', handleEscUp); // удаляем слушатель ESC перед закрытием!
+  form.classList.remove('popup_visible');
+}
+
+function handleEscUp(evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    const openedPopup = document.querySelector('.popup_visible');
+    closePopup(openedPopup);
+  }
+}
+////////////////////////
 
 function openPopup(form) {
   form.classList.add('popup_visible');
+  document.addEventListener('keydown', handleEscUp);
 }
 
 function closePopup(form) {
