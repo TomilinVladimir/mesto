@@ -47,6 +47,7 @@ const ESC_KEYCODE = 27;
 function closePopup(form) {
   document.removeEventListener('keydown', handleEscUp); // удаляем слушатель ESC перед закрытием!
   form.classList.remove('popup_visible');
+  eraseForm(form);
 }
 
 function handleEscUp(evt) {
@@ -55,14 +56,13 @@ function handleEscUp(evt) {
     closePopup(openedPopup);
   }
 }
-////////////////////////
 
 function openPopup(form) {
   form.classList.add('popup_visible');
   document.addEventListener('keydown', handleEscUp);
 }
 
-function submitHandlerProfil(evt) {
+function handleSubmitProfil(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   // Так мы можем определить свою логику отправки.
   // О том, как это делать, расскажем позже.
@@ -104,8 +104,8 @@ function createCardFunc(name, src) {
 }
 
 function renderCards(name, src) {
-  const todo = createCardFunc(name, src);
-  cardsContainer.prepend(todo);
+  const newCard = createCardFunc(name, src);
+  cardsContainer.prepend(newCard);
 }
 
 function submitCardListner() {
@@ -113,6 +113,8 @@ function submitCardListner() {
     evt.preventDefault();
     renderCards(newCardName.value, newCardSrc.value);
     closePopup(popupCard);
+    evt.submitter.classList.add('popup__button_disabled');
+    evt.submitter.setAttribute('disabled', true);
     cardForm.reset();
   });
 }
@@ -133,13 +135,14 @@ function openProfilPopup() {
 
 function openCardForm(btn) {
   openPopup(popupCard);
-  btn.classList.add('popup__button_disabled');
-  btn.setAttribute('disabled', true);
+  // disableButton(btn);
+  // btn.classList.add('popup__button_disabled');
+  // btn.setAttribute('disabled', true);
 }
 
 // // // Прикрепляем обработчик к форме:
 // // // он будет следить за событием “submit” - «отправка»
-profilForm.addEventListener('submit', submitHandlerProfil);
+profilForm.addEventListener('submit', handleSubmitProfil);
 
 profilBtnEdit.addEventListener('click', function () { openProfilPopup() });
 profilBtnClose.addEventListener('click', function () { closePopup(popupProfil) });

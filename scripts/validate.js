@@ -11,6 +11,10 @@ function enableButton(button, options) {
 
 // ${form.name}-
 
+function resetForm(form) {
+  form.reset();
+}
+
 function showInputError(form, input, options) {
   const errorElement = form.querySelector(`#${input.name}-error`);
   input.classList.add(options.inputErrorClass);
@@ -20,9 +24,22 @@ function showInputError(form, input, options) {
 
 function hideInputError(form, input, options) {
   const errorElement = form.querySelector(`#${input.name}-error`);
+  errorElement.textContent = '';
   input.classList.remove(options.inputErrorClass);
   errorElement.classList.remove(options.errorClass);
-  errorElement.textContent = '';
+}
+
+function eraseForm(form) {
+  const currentForm = form.querySelector('.popup__form');
+  resetForm(currentForm);
+  currentForm.querySelectorAll('.popup__error_visible').forEach(function (span) {
+    span.textContent = "";
+  })
+  currentForm.querySelectorAll('.popup__input').forEach(function (input) {
+    input.classList.remove('popup__input_type_error');
+  })
+  form.querySelector('.popup__button').classList.remove('popup__button_disabled');
+  form.querySelector('.popup__button').removeAttribute('disabled');
 }
 
 function checkFormValidity(form, options) {
