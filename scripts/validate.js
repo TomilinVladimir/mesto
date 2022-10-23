@@ -38,8 +38,6 @@ function eraseForm(form) {
   currentForm.querySelectorAll('.popup__input').forEach(function (input) {
     input.classList.remove('popup__input_type_error');
   })
-  form.querySelector('.popup__button').classList.remove('popup__button_disabled');
-  form.querySelector('.popup__button').removeAttribute('disabled');
 }
 
 function checkFormValidity(form, options) {

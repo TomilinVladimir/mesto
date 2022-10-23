@@ -47,7 +47,6 @@ const ESC_KEYCODE = 27;
 function closePopup(form) {
   document.removeEventListener('keydown', handleEscUp); // удаляем слушатель ESC перед закрытием!
   form.classList.remove('popup_visible');
-  eraseForm(form);
 }
 
 function handleEscUp(evt) {
@@ -73,6 +72,7 @@ function handleSubmitProfil(evt) {
   // Вставьте новые значения с помощью textContent
   closePopup(popupProfil);
 }
+
 
 function createCardFunc(name, src) {
   const newElement = template.cloneNode(true);
@@ -112,10 +112,11 @@ function submitCardListner() {
   cardForm.addEventListener('submit', function (evt) {
     evt.preventDefault();
     renderCards(newCardName.value, newCardSrc.value);
+    newCardName.value="";
+    newCardSrc.value="";
     closePopup(popupCard);
     evt.submitter.classList.add('popup__button_disabled');
     evt.submitter.setAttribute('disabled', true);
-    cardForm.reset();
   });
 }
 
@@ -128,13 +129,17 @@ function createInitialCards() {
 }
 
 function openProfilPopup() {
+  eraseForm(popupProfil);
+  popupProfil.querySelector('.popup__button').classList.remove('popup__button_disabled');
+  popupProfil.querySelector('.popup__button').removeAttribute('disabled');
   openPopup(popupProfil);
   nameInput.value = oldName.textContent;
   jobInput.value = oldJob.textContent;
 }
 
-function openCardForm(btn) {
+function openCardForm() {
   openPopup(popupCard);
+  eraseForm(popupCard);
   // disableButton(btn);
   // btn.classList.add('popup__button_disabled');
   // btn.setAttribute('disabled', true);
