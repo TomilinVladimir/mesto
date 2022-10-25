@@ -73,7 +73,6 @@ function handleSubmitProfil(evt) {
   closePopup(popupProfil);
 }
 
-
 function createCardFunc(name, src) {
   const newElement = template.cloneNode(true);
   const cardName = newElement.querySelector(cardSelectors.text);
@@ -115,8 +114,6 @@ function submitCardListner() {
     newCardName.value="";
     newCardSrc.value="";
     closePopup(popupCard);
-    evt.submitter.classList.add('popup__button_disabled');
-    evt.submitter.setAttribute('disabled', true);
   });
 }
 
@@ -130,19 +127,21 @@ function createInitialCards() {
 
 function openProfilPopup() {
   eraseForm(popupProfil);
-  popupProfil.querySelector('.popup__button').classList.remove('popup__button_disabled');
-  popupProfil.querySelector('.popup__button').removeAttribute('disabled');
+  setInitialValues();
+  handleButtonState(popupProfil, options);
   openPopup(popupProfil);
-  nameInput.value = oldName.textContent;
-  jobInput.value = oldJob.textContent;
+
 }
 
 function openCardForm() {
   openPopup(popupCard);
   eraseForm(popupCard);
-  // disableButton(btn);
-  // btn.classList.add('popup__button_disabled');
-  // btn.setAttribute('disabled', true);
+  handleButtonState(popupCard, options);
+}
+
+function setInitialValues() {
+  nameInput.value = oldName.textContent;
+  jobInput.value = oldJob.textContent;
 }
 
 // // // Прикрепляем обработчик к форме:
@@ -165,5 +164,6 @@ popupList.forEach(popup => {
   })
 });
 
+setInitialValues();
 submitCardListner();
 createInitialCards();
