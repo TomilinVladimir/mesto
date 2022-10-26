@@ -128,7 +128,7 @@ function createInitialCards() {
 function openProfilPopup() {
   eraseForm(popupProfil);
   setInitialValues();
-  handleButtonState(popupProfil, options);
+  handleButtonState(popupProfil, validationOptions);
   openPopup(popupProfil);
 
 }
@@ -136,7 +136,7 @@ function openProfilPopup() {
 function openCardForm() {
   openPopup(popupCard);
   eraseForm(popupCard);
-  handleButtonState(popupCard, options);
+  handleButtonState(popupCard, validationOptions);
 }
 
 function setInitialValues() {

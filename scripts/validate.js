@@ -1,4 +1,4 @@
-const options = {
+const validationOptions = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
@@ -8,12 +8,12 @@ const options = {
 }
 
 
-function disableButton(button) {
+function disableButton(button, options) {
   button.classList.add(options.inactiveButtonClass);
   button.setAttribute('disabled', true);
 }
 
-function enableButton(button) {
+function enableButton(button, options) {
   button.classList.remove(options.inactiveButtonClass);
   button.removeAttribute('disabled');
 }
@@ -22,21 +22,21 @@ function resetForm(form) {
   form.reset();
 }
 
-function showInputError(form, input) {
+function showInputError(form, input, options) {
   const errorElement = form.querySelector(`#${input.name}-error`);
   input.classList.add(options.inputErrorClass);
   errorElement.textContent = input.validationMessage;
   errorElement.classList.add(options.errorClass);
 }
 
-function hideInputError(form, input) {
+function hideInputError(form, input, options) {
   const errorElement = form.querySelector(`#${input.name}-error`);
   errorElement.textContent = '';
   input.classList.remove(options.inputErrorClass);
   errorElement.classList.remove(options.errorClass);
 }
 
-function eraseForm(form) {
+function eraseForm(form, options) {
   const currentForm = form.querySelector('.popup__form');
   resetForm(currentForm);
   currentForm.querySelectorAll('.popup__error_visible').forEach(function (span) {
@@ -47,7 +47,7 @@ function eraseForm(form) {
   })
 }
 
-function checkFormValidity(form) {
+function checkFormValidity(form, options) {
   let isValid = true;
   const inputList = form.querySelectorAll(options.inputSelector);
   inputList.forEach(function (input) {
@@ -58,7 +58,7 @@ function checkFormValidity(form) {
   return isValid;
 }
 
-function handleInputError(form, input) {
+function handleInputError(form, input, options) {
   if (!input.validity.valid) {
     showInputError(form, input, options);
   } else {
@@ -66,7 +66,7 @@ function handleInputError(form, input) {
   }
 }
 
-function handleButtonState(form) {
+function handleButtonState(form, options) {
   const submitButton = form.querySelector(options.submitButtonSelector);
   if (!checkFormValidity(form, options)) {
     disableButton(submitButton, options);
@@ -75,7 +75,7 @@ function handleButtonState(form) {
   }
 }
 
-function enableValidation() {
+function enableValidation(options) {
   const formList = document.querySelectorAll(options.formSelector);
   formList.forEach(function (form) {
     handleButtonState(form, options);
@@ -88,4 +88,4 @@ function enableValidation() {
 
 }
 
-enableValidation();
+enableValidation(validationOptions);
